@@ -1,0 +1,49 @@
+<div class="profileContainer">
+	<h>My Profile</h>
+	<form role="form">
+		<div class="form-group">
+			<label for="firstName">First Name</label>
+			<input type="text" class="form-control" ng-model="firstName"id="firstName">
+		</div>
+		<div class="form-group">
+			<label for="lastName">Last Name</label>
+			<input type="text" class="form-control" ng-model="lastName"id="lastName">
+		</div>
+		<div class="form-group">
+			<label for="publicDisplayName">Public Display Name</label>
+			<input type="text" class="form-control" ng-model="publicDisplayName"id="publicDisplayName">
+		</div>
+		<div class="form-group">
+			<label for="aboutMe">About Me</label>
+			<textarea class="form-control" ng-model="aboutMe" id="aboutMe"></textarea>
+		</div>
+	</form>
+	<h1>My Photo</h1>
+	<form role="form">
+		<div class="form-group">
+		    <label for="myPhoto">Photo Url</label>
+		    <input type="url" class="form-control" ng-model="myPhoto" id="myPhoto">	
+		</div>
+	</form>
+	<h1>Social Media</h1>
+	<form role="form">	
+	    <div class="form-group">
+			<label for="facebook"><i class="fa fa-facebook"></i>&nbsp;Facebook</label>
+			<input type="url" class="form-control" ng-model="facebook"id="facebook">
+		</div>
+		<div class="form-group">
+			<label for="twitter"><i class="fa fa-twitter"></i>&nbsp;Twitter</label>
+			<input type="url" class="form-control" ng-model="twitter"id="twitter">
+		</div>
+		<div class="form-group">
+			<label for="instagram"><i class="fa fa-instagram"></i>&nbsp;Instagram</label>
+			<input type="url" class="form-control" ng-model="instagram"id="Instagram">
+		</div>
+		<div class="form-group">
+			<label for="pinterest"><i class="fa fa-pinterest"></i>&nbsp;Pinterest</label>
+			<input type="url" class="form-control" ng-model="pinterest"id="pinterest">
+		</div>
+        <button type="submit" ng-click="addProfile()"class="btn btn-default">Save Profile</button>
+
+	</form>
+</div>

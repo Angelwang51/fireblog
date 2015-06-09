@@ -1,0 +1,52 @@
+/**Constants**/
+@defaultFontSize:14px;
+@defaultFontColor:#000000;
+@defaultLineHeight:100%;
+
+/**Operations**/
+@commentDateSize: @defaultFontSize -10;
+@commentDateColor: @defaultFontColor + #999999;
+@commentBodySize:@defaultFontSize;
+@commentBodyColor:@defaultFontColor;
+@commentListHeight:@defaultLineHeight /1.5;
+
+/**Mixins**/
+/**Style**/
+.commentName,.commentContent{
+	font-size:@commentBodySize;
+	color:@commentBodyColor;
+	font-style:normal;
+}
+.commentDate{
+	font-size:@commentDateSize;
+	color:@commentDateColor;
+	font-style:italic;
+}
+.commentList{
+	list-style-type:none;
+
+}
+#inputComment{
+	width:500px;
+	height:90px;
+}
+.numberComments{
+	font-size:14px;
+	text-align:center;
+}
+.commentContainer{
+	padding-bottom:20px;
+}
+.listStyle{
+	line-height:100%;
+}
+.detailContainer{
+	padding-top:30px;
+}
+.editBtn{
+	color:#000000;
+}
+.commentLegend{
+	width:100px;
+	margin-top:20px;
+}

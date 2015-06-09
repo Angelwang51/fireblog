@@ -1,0 +1,12 @@
+<div ng-repeat ="article in articles|toArray|orderBy:'-date'" class="photo">
+
+        <div class="photo-wrapper">
+            <img src="" data-ng-src="{{article.coverImage}}" class="animation-fade" data-imageloaded data-loadedclass="animation-faded">
+        </div>
+
+
+        <div class="photo-description">
+            <h3>{{article.title}}</h3>
+            <p>{{article.summary}}</p>
+        </div>
+</div>

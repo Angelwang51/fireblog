@@ -3,6 +3,11 @@
  * stylesheets used throughout the application as this is the only stylesheet in
  * the Grunt configuration that is automatically processed.
  */
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
 
 
 /**
@@ -66,15 +71,215 @@ h2 {
 /**
  * Navigation
  */
+.logo{
+  text-align:center;
+}
 
-.navbar {
-  margin-top: 20px;
+ .site-title{
+   height: auto;
+   width:auto;
+   line-height: 150px;
+   font-family: 'Marck Script', cursive;
+   font-size: 60px;
+   text-align:center;
+   color:#000000;
+   padding:10px;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   -ms-transition: all 0.3s;
+   -o-transition: all 0.3s;
+   transition: all 0.3s;
+   &:hover{
+     cursor:pointer;
+     text-decoration:none;
+     color:#000000;
+   }
+}
+.site-description{
+  border: 2px solid black;
+  text-align:center;
+  font-size:20px;
+  display:inline;
+  padding:3px;
+}
+.blogDesc-container{
+  text-align:center;
+  padding-bottom:20px;
+}
+
+/*Strip the ul of padding and list styling*/
+#menu ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  position: absolute;
+}
+
+/*Create a horizontal list with spacing*/
+#menu li {
+  display:inline-block;
+  float: left;
+  margin-right: 1px;
+  border-left: 1px solid black;
+}
+
+/*Style for menu links*/
+#menu li a {
+  display:block;
+  min-width:90px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size:17px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000000;
+  text-decoration: none;
+}
+
+/*Hover state for top level links*/
+#menu li:hover a {
+  text-decoration: none;
+  cursor:pointer;
+  color: #65bdd3;
   
-  small {
-    font-size: 60%;
+}
+
+/*Prevent text wrapping*/
+#menu li ul li a {
+  width: auto;
+  min-width: 100px;
+  padding: 0 20px;
+}
+
+/*Display the dropdown on hover*/
+#menu ul li a:hover + .hidden, .hidden:hover {
+  display: block;
+}
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+
+/*Responsive Styles*/
+
+@media screen and (max-width : 760px){
+  /*Make dropdown links appear inline*/
+  ul {
+    position: static;
+    display: none;
+  }
+  /*Create vertical spacing*/
+  li {
+    margin-bottom: 1px;
+  }
+  /*Make all menu links full width*/
+  ul li, li a {
+    width: 100%;
+  }
+  /*Display 'show menu' link*/
+  .show-menu {
+    display:block;
   }
 }
 
+nav{
+  margin:50px;
+
+  
+}
+.midMenu{
+  text-align:center;
+  }
+
+
+
+
+
+/*
+.menu-top{
+  height:30px;
+  width:450px;
+  background-color:#ffffff;
+  color:#000000;
+  border:1px solid #000000;
+}
+.nav-top{
+  list-style-type:none;
+  li{
+   display:inline;
+   padding-left:10px;
+  }
+}*/
+/*.blog-defination{
+  height:300px;
+  width:100%;
+  overflow:hidden;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  background-color:#ffffff;
+  border-bottom:1px solid black;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
+}
+.blog-defination.smaller{
+  height:100px;
+}
+.site-title.smaller{
+  width:100px;
+  height:50px;
+  font-size: 30px;
+  padding:10px;
+  margin-top:20px;
+  
+}
+.blogDesc-container.smaller{
+  text-align:center;
+  padding-bottom:10px;
+  margin-bottom:20px;
+}
+.site-description.smaller{
+  border: 1px solid black;
+  text-align:center;
+  font-size:10px;
+  display:inline;
+  padding:2px;
+}*/
+/**
+ * Body
+ */
+ body{
+    background-color:#f3f3f3;
+ }
+/**
+ * Main
+ */
+ .container{
+    margin-top:150px;
+    width:1200px;
+    
+ }
 
 /**
  * Footer
@@ -119,5 +324,8 @@ h2 {
  * TODO: In a later version of this boilerplate, I'd like to automate this.
  */
 
-@import '../app/home/home.less';
-
+@import '../app/article/article.less';
+@import '../app/detail/detail.less';
+@import '../app/edit/edit.less';
+@import '../app/post/post.less';
+@import '../app/aboutMe/aboutMe.less';

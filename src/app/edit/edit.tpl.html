@@ -1,0 +1,29 @@
+<div class="editContainer">
+<div class="editor col-md-6">
+<form role="form">
+<div class="form-group">
+<label for='editInputTitle'>Title</label>
+<input type="text" id='editInputTitle' class="form-control"ng-model="editTitle">
+</div>
+<div class="form-group">
+	<label for="editInputImage">Cover Image</label>
+	<input type="url" class="form-control" id='editInputImage' ng-model='editCoverImage' placeholder='http://'>
+</div>
+<div class="form-group">
+<label for="editInputSummary">Summary</label>
+<textarea ng-model='editSummary' id='editInputSummary' class="form-control"></textarea>
+</div>
+<div class="form-group">
+<textarea ng-model="editBody" id="editInputBody" class="form-control"></textarea>
+</div>
+<div class="form-group">
+<button type="submit"class="btn btn-default" ng-click="updateArticle()">Update</button>
+<button type="submit"class="btn btn-default" ng-click="deleteArticle()">Delete</button>
+</div>
+</form>
+</div>
+<div class="preview col-md-6">
+    <div btf-markdown="editSummary"></div>
+	<div btf-markdown="editBody"></div>
+</div>
+</div>

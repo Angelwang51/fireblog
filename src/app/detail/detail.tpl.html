@@ -1,0 +1,46 @@
+<div class="detailContainer">
+<h1>{{article.title}}</h1>
+<p>{{article.date | date:'MMM dd,yyyy'}}</p>
+<strong><p btf-markdown="article.summary"></p></strong>
+<p btf-markdown="article.body"></p>
+<a class="btn btn-default editBtn" ui-sref="edit({articleId:id_to_get})"><i class="fa fa-pencil-square-o"></i>&nbspEdit</a>
+</div>
+<legend class='numberComments'>{{numComments}} COMMENTS</legend>
+<div class="commentContainer">
+<ul class="listStyle">
+	<li class="commentList"ng-repeat="comment in comments|toArray|orderBy:'-date'">
+
+	<p class="commentName">{{comment.name}}</p>
+	<p class="commentDate">{{comment.date| date:'MMM dd,yyyy'}}</p>
+	<p class="commentContent">{{comment.comment}}</p>
+	<legend class="commentLegend"></legend>
+
+	</li>
+</ul>
+</div>
+<p>LEAVE A REPLY</p>
+<form class="form-horizontal" role="form">
+<div class="form-group">
+<label for='inputName' class="control-label col-sm-1">Name</label>
+<div class="col-sm-11">
+<input type="text" id='inputName'ng-model="name" placeholder="Name">
+</div>
+</div>
+<div class="form-group">
+<label for='inputEmail' class="control-label col-sm-1">Email</label>
+<div class="col-sm-11">
+<input type="email" id='inputEmail'ng-model="email" placeholder="Email">
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-1"></div>
+<div class="col-sm-11">
+<textarea ng-model="comment" id="inputComment" placeholder="Comment"></textarea>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-1 col-sm-11">
+<button type="submit"class="btn btn-default" ng-click="addComment()">Post Comment</button>
+</div>
+</div>
+</form>

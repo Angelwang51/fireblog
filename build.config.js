@@ -62,11 +62,30 @@ module.exports = {
    */
   vendor_files: {
     js: [
-      'vendor/angular/angular.js',
-      'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
-      'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/jquery/dist/jquery.js',
+      'vendor/angular/angular.js', 
+      'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js', 
+      'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js', 
+      'vendor/angular-ui-router/release/angular-ui-router.js', 
+      'vendor/angular-ui-utils/modules/route/route.js', 
+      'vendor/angular-sanitize/angular-sanitize.js', 
+      'vendor/showdown/src/showdown.js', 
+      'vendor/angular-markdown-directive/markdown.js', 
+      'vendor/angular-animate/angular-animate.js', 
+      'vendor/lodash/lodash.js', 
+      'vendor/get-style-property/get-style-property.js', 
+      'vendor/get-size/get-size.js', 
+      'vendor/eventEmitter/EventEmitter.js', 
+      'vendor/eventie/eventie.js', 
+      'vendor/doc-ready/doc-ready.js', 
+      'vendor/matches-selector/matches-selector.js', 
+      'vendor/outlayer/item.js', 
+      'vendor/outlayer/outlayer.js',
+      'vendor/jquery-bridget/jquery.bridget.js',
+      'vendor/masonry/masonry.js', 
+      'vendor/imagesloaded/imagesloaded.js', 
+      'vendor/angular/angular.min.js', 
+      'vendor/angular-masonry/angular-masonry.js'
     ],
     css: [
     ],

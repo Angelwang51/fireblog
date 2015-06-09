@@ -1,0 +1,67 @@
+
+		<!--<div class="slider">
+			<carousel interval="sliderInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img class="image-circle" ng-src="{{slide.image}}" style="margin:auto;">
+                </slide>
+            </carousel>
+		</div> 
+<div deckgrid source="articles" cardTemplate="deckgrid-card.tpl.html" class="deckgrid clearfix"></div>		-->
+<!--
+<div masonry class="articleList">
+
+  <div class="masonry-brick gallery" ng-repeat ="article in articles|toArray|orderBy:'-date'">
+  
+			<img ng-src='{{article.coverImage}}'>
+				
+	</div>	
+</div>
+-->
+
+<div id='wrapper'>
+<article class="articleList">
+
+  <div class="gallery" ng-repeat ="article in articles|toArray|orderBy:'-date'">
+ 
+   	<div class="article-image">	
+		<a href ui-sref="detail({articleId: article.id})">
+			<img ng-src='{{article.coverImage}}'>
+				<div class="flexbox">
+		   			<div class="flexbox-item">
+		   				<hr class="separator">
+		   				<span class="read-more">Read more</span>
+		   				<hr class="separator">
+		   			</div>
+		   		</div>
+		</a>
+
+	</div>	
+	<div class="articleDecs">
+		<h3 class="article-title">
+		<a class="articleTitle"href ui-sref="detail({articleId: article.id})">
+		{{article.title}}</a>
+		</h3>
+		
+ 
+  <section class="article-content article-summary">
+  	<a class="articleSummary" ui-sref="detail({articleId: article.id})">
+  	<p>{{article.summary}}</p></a>
+  </section>
+  <footer class="meta-box article-meta">
+  	<span class="article-date">
+  		<i class="fa fa-clock-o"></i>
+		
+		{{article.date | date:'MMM dd,yyyy'}}
+
+	</span>	
+	<span class="meta-box article-comments">
+		<i class="fa fa-comment-o"></i>
+		{{numComments}}
+	</span>	
+		
+  </footer>	
+  </div>	
+	</div>	
+</article>
+
+</div>

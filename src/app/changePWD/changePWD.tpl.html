@@ -1,0 +1,23 @@
+<div>
+<form class="form-signin" name="changePForm">
+<div class="form-group" ng-class="{ 'has-error' : changePForm.password.$invalid }">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" ng-model="user.email">
+    <p class="help-block" ng-show="changePForm.email.$invalid">Enter a valid email.</p>
+    <label>Old Password</label>
+    <input type="password" name="password1" class="form-control" ng-model="user.password1" 
+    ng-minlength="6">
+    <p class="help-block" ng-show="changePForm.password.$error.minlength">Min password length is 6 characters.</p>
+    <label>New Password</label>
+    <input type="password" name="password2" class="form-control" ng-model="user.password2" 
+    ng-minlength="6">
+    <p class="help-block" ng-show="changePForm.password.$error.minlength">Min password length is 6 characters.</p>
+    <label>Repeat New Password</label>
+    <input type="password" name="password3" class="form-control" ng-model="user.password3" 
+    ng-minlength="6">
+    <p class="help-block" ng-show="changePForm.password.$error.minlength">Min password length is 6 characters.</p>
+    <p style="color:red;" ng-show="pwdError">{{pwdErrorMessage}}</p>
+    <button type="button" ng-click="changeP()" ng-disabled="user.password2!=user.password3" class="btn btn-lg btn-primary btn-block">Change Password</button>
+</div>
+</form>
+</div>
