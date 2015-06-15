@@ -1,19 +1,20 @@
-angular.module( 'ngBlog', [
+var API_URL = 'https://torrid-heat-2114.firebaseio.com';
+
+angular.module( 'fireBlog', [
   'templates-app',
   'templates-common',
   //'ngSanitize',
   'btford.markdown',
   'ngAnimate',
-  'ngBlog.article',
-  'ngBlog.post',
-  'ngBlog.edit',
-  'ngBlog.detail',
-  'ngBlog.register',
-  'ngBlog.login',
-  'ngBlog.changePWD',
-  'ngBlog.profile',
-  'ngBlog.aboutMe',
-  'ngBlog.contact',
+  'fireBlog.article',
+  'fireBlog.post',
+  'fireBlog.edit',
+  'fireBlog.detail',
+  'fireBlog.register',
+  'fireBlog.login',
+  'fireBlog.changePWD',
+  'fireBlog.aboutMe',
+  'fireBlog.contact',
   'ui.router'
 ])
 
@@ -27,7 +28,7 @@ angular.module( 'ngBlog', [
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBlog' ;
+      $scope.pageTitle = toState.data.pageTitle + ' | fireBlog' ;
     }
   });
 

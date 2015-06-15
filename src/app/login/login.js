@@ -1,4 +1,4 @@
-angular.module( 'ngBlog.login', [
+angular.module( 'fireBlog.login', [
   'ui.router',
   'placeholders',
   'ui.bootstrap',
@@ -19,34 +19,35 @@ angular.module( 'ngBlog.login', [
 })
 .controller('LoginCtrl', 
   function($rootScope, $scope,$firebaseAuth,$location,$http){
-    var firebaseObj = new Firebase("https://torrid-heat-2114.firebaseio.com");
+    var firebaseObj = new Firebase(API_URL);
     $scope.loginObj = $firebaseAuth(firebaseObj);
-
     $scope.SignIn = function(event) {
-    event.preventDefault();  // To prevent form refresh
-    $scope.username = $scope.user.email;
-    $scope.password = $scope.user.password;
-     
-    $scope.loginObj.$authWithPassword({
-            email: $scope.username,
-            password: $scope.password
-        })
-        .then(function(user) {
-            var authData = $scope.loginObj.$getAuth();
-            $scope.profileID=authData.uid;
+      event.preventDefault();  // To prevent form refresh
+      $scope.username = $scope.user.email;
+      $scope.password = $scope.user.password;
+       
+      $scope.loginObj.$authWithPassword({
+              email: $scope.username,
+              password: $scope.password
+          })
+          .then(function(user) {
+              var authData = $scope.loginObj.$getAuth();
+              $scope.profileID=authData.uid;
 
-            $http.get('https://torrid-heat-2114.firebaseio.com/profile/'+$scope.profileID+'/.json')
-            .success(function(data){
-              $rootScope.welcome=data.username;
-              console.log(data.username);
-            });
-            // Success callback
-            console.log('Authentication successful');
-            $location.path('/article');
-        }, function(error) {
-            // Failure callback
-            console.log('Authentication failure');
-        });
+              $http.get(API_URL+'/profile/'+$scope.profileID+'/.json')
+              .success(function(data){
+                $rootScope.welcome=data.username;
+                console.log(data.username);
+              });
+              // Success callback
+              console.log('Authentication successful');
+              $location.path('/article');
+              // Hide signIn and signUp in nav bar
+              $rootScope.currentUserSignedIn = true;
+          }, function(error) {
+              // Failure callback
+              console.log('Authentication failure');
+          });
 
 };
    

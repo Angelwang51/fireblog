@@ -1,4 +1,4 @@
-angular.module( 'ngBlog.aboutMe', [
+angular.module( 'fireBlog.aboutMe', [
   'ui.router',
   'plusOne',
   'ui.bootstrap',

@@ -1,29 +1,27 @@
 <div class="postContainer">
-
-<div class="editor col-md-6">
-
-<form  role="form">
-<div class="form-group">
-<label for='inputTitle'>Title</label>
-<input type="text" class="form-control"id='inputTitle'ng-model="title" placeholder="Title">
-</div>
-<div class="form-group">
-	<label for="inputImage">Cover Image</label>
-	<input type="url" class="form-control" id='inputImage' ng-model='coverImage' placeholder='http://'>
-</div>
-<div class="form-group">
-<label for="inputSummary">Summary</label>
-<textarea ng-model='summary' id='inputSummary' class="form-control" placeholder='Summary'></textarea>
-</div>
-<div class="form-group">
-<textarea ng-model="body" id="inputBody" class="form-control"placeholder="Content"></textarea>
-</div>
-<div class="form-group">
-<button type="submit"class="btn btn-default" ng-click="addArticle()">Save</button>
-</div>
-</form>
-
-</div>
-<div class="preview col-md-6" btf-markdown="body"></div>
+	<div class="editor col-md-6">
+		<form  class="postForm"role="form">
+			<div class="form-group">
+				<label for='inputTitle'>Title</label>
+				<input type="text" class="form-control"id='inputTitle'ng-model="title">
+			</div>
+			<div class="form-group">
+				<label for="inputImage">Cover Image</label>
+				<input type="url" class="form-control" id='inputImage' ng-model='coverImage' placeholder='http://'>
+			</div>
+			<div class="form-group">
+				<label for="inputSummary">Summary</label>
+				<textarea ng-model='summary' id='inputSummary' class="form-control" ></textarea>
+			</div>
+			<div class="form-group">
+				<textarea ng-model="body" id="inputBody" class="form-control"placeholder="Content"></textarea>
+			</div>
+			<div class="form-group">
+				<button type="submit"class="btn btn-default" ng-click="addArticle()">Save</button>
+			</div>
+		</form>
+	</div>
+	<label>Preview</label>
+	<div class="preview col-md-6 markdownBody" btf-markdown="body"></div>
 </div>
 

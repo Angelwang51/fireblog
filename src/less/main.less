@@ -107,55 +107,69 @@ h2 {
   padding-bottom:20px;
 }
 
-/*Strip the ul of padding and list styling*/
-#menu ul {
+
+
+/**Menu
+ *
+ */
+nav{
+  width:100%;
+  padding-left:-12px;
+  padding-top:20px;
+
+
+} 
+nav ul{
   list-style-type:none;
-  margin:0;
-  padding:0;
-  position: absolute;
-}
+  text-align:center;
 
-/*Create a horizontal list with spacing*/
-#menu li {
+  padding:8px;
+}
+nav li{
   display:inline-block;
-  float: left;
-  margin-right: 1px;
-  border-left: 1px solid black;
+  line-height:40px;
+  text-align:center;
+  vertical-align:middle;
+  text-transform: uppercase;
+  width:10%;
 }
-
-/*Style for menu links*/
-#menu li a {
+nav a{
   display:block;
-  min-width:90px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  font-size:17px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #000000;
-  text-decoration: none;
-}
-
-/*Hover state for top level links*/
-#menu li:hover a {
-  text-decoration: none;
+  font-size:18px;
+  color:#000;
+  &:hover{
+  text-decoration:none;
   cursor:pointer;
-  color: #65bdd3;
-  
+  color:#65bdd3;
+  &:active{
+   color:#65bdd3;
+   text-decoration:none;
+  }
+  }
+}
+.welcomeUser{
+   font-size:18px;
 }
 
-/*Prevent text wrapping*/
-#menu li ul li a {
-  width: auto;
-  min-width: 100px;
-  padding: 0 20px;
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
 }
 
-/*Display the dropdown on hover*/
-#menu ul li a:hover + .hidden, .hidden:hover {
-  display: block;
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
 }
 
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -181,16 +195,16 @@ input[type=checkbox]:checked ~ #menu{
 
 @media screen and (max-width : 760px){
   /*Make dropdown links appear inline*/
-  ul {
+  nav ul {
     position: static;
     display: none;
   }
   /*Create vertical spacing*/
-  li {
+  nav li {
     margin-bottom: 1px;
   }
   /*Make all menu links full width*/
-  ul li, li a {
+  nav ul li, li a {
     width: 100%;
   }
   /*Display 'show menu' link*/
@@ -199,87 +213,36 @@ input[type=checkbox]:checked ~ #menu{
   }
 }
 
-nav{
-  margin:50px;
 
-  
-}
-.midMenu{
-  text-align:center;
-  }
-
-
-
-
-
-/*
-.menu-top{
-  height:30px;
-  width:450px;
-  background-color:#ffffff;
-  color:#000000;
-  border:1px solid #000000;
-}
-.nav-top{
-  list-style-type:none;
-  li{
-   display:inline;
-   padding-left:10px;
-  }
-}*/
-/*.blog-defination{
-  height:300px;
-  width:100%;
-  overflow:hidden;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:999;
-  background-color:#ffffff;
-  border-bottom:1px solid black;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  transition: height 0.3s;
-}
-.blog-defination.smaller{
-  height:100px;
-}
-.site-title.smaller{
-  width:100px;
-  height:50px;
-  font-size: 30px;
-  padding:10px;
-  margin-top:20px;
-  
-}
-.blogDesc-container.smaller{
-  text-align:center;
-  padding-bottom:10px;
-  margin-bottom:20px;
-}
-.site-description.smaller{
-  border: 1px solid black;
-  text-align:center;
-  font-size:10px;
-  display:inline;
-  padding:2px;
-}*/
 /**
  * Body
  */
  body{
     background-color:#f3f3f3;
+    font-family: 'Open Sans', sans-serif;
  }
 /**
  * Main
  */
  .container{
-    margin-top:150px;
-    width:1200px;
-    
+    margin-top:20px;
+    width:100%;
+    position: relative;
+    -webkit-animation: mymove 1s; /* Chrome, Safari, Opera */
+    animation: mymove 1s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
  }
+
+ @-webkit-keyframes mymove {
+    from {top: 0px;}
+    to {top: 50px;}
+}
+
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: 50px;}
+}
 
 /**
  * Footer
@@ -329,3 +292,4 @@ nav{
 @import '../app/edit/edit.less';
 @import '../app/post/post.less';
 @import '../app/aboutMe/aboutMe.less';
+@import '../app/register/register.less';

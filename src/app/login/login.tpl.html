@@ -1,21 +1,19 @@
- </div>
-        <form class="form-signin" name="signinForm" role="form">
-    <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
-        <label>Email</label>
-        <input type="email" name="email" class="form-control" ng-model="user.email">
-        <p class="help-block" ng-show="signinForm.email.$invalid">Enter a valid email.</p>
-    </div>
-    <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3">
-        <p class="help-block" ng-show="signinForm.password.$error.minlength">Min password length is 8 characters.</p>
-    </div>
-    <label class="checkbox">
-        <a href="#/register"> Sign Up</a>
-    </label>
-    <button ng-disabled="!user.email || !user.password" type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
-    <a href ui-sref="changePWD">Change Password</a>
-
-</form>
- 
-    </div>
+ <div>
+    <form class="form-signin" name="signinForm" role="form">
+        <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email">
+            <p class="help-block" ng-show="signinForm.email.$invalid">Enter a valid email.</p>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3">
+            <p class="help-block" ng-show="signinForm.password.$error.minlength">Min password length is 8 characters.</p>
+        </div>
+            <button ng-disabled="!user.email || !user.password" type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
+        <div>    
+            <a href ui-sref="changePWD">Change Password</a><br>
+            <a href="#/register"> Sign Up</a>
+        </div>
+    </form>
+</div>

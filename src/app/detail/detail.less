@@ -12,20 +12,19 @@
 
 /**Mixins**/
 /**Style**/
-.commentName,.commentContent{
-	font-size:@commentBodySize;
-	color:@commentBodyColor;
-	font-style:normal;
-}
+
 .commentDate{
-	font-size:@commentDateSize;
-	color:@commentDateColor;
+	font-size:12px;
+	color:#999;
 	font-style:italic;
 }
+
 .commentList{
 	list-style-type:none;
+	padding-top:15px;
 
 }
+
 #inputComment{
 	width:500px;
 	height:90px;
@@ -33,20 +32,61 @@
 .numberComments{
 	font-size:14px;
 	text-align:center;
+	margin-top:40px;
 }
 .commentContainer{
-	padding-bottom:20px;
+	padding:20px;
+	background:#fff;
+	
 }
-.listStyle{
-	line-height:100%;
-}
+
 .detailContainer{
-	padding-top:30px;
+	max-width:800px;	
+	margin:0 auto;
+	word-wrap:break-word;
 }
+
 .editBtn{
 	color:#000000;
+	margin-top:30px;
 }
-.commentLegend{
-	width:100px;
-	margin-top:20px;
+
+.detailImg img{
+	width:100%;
+	height:100%;
+}
+
+.detailArticle{
+	background:#fff;
+	padding:30px;
+}
+
+.replyContainer{
+	padding:10px;
+	background:#fff;
+}
+
+.form-reply{
+	padding:20px;
+}
+
+.markdownBody{
+	img{
+	width:100%;
+	}
+}
+
+@media screen and (max-width:760px){
+	.detailArticle{
+	  padding:0;
+	}
+	
+	.commentContainer{
+	  padding:5px 0;
+	}
+
+	#inputComment{
+	  width:300px;
+	}
+	
 }

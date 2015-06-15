@@ -1,4 +1,4 @@
-angular.module( 'ngBlog.changePWD', [
+angular.module( 'fireBlog.changePWD', [
   'ui.router',
   'placeholders',
   'ui.bootstrap',
@@ -19,7 +19,7 @@ angular.module( 'ngBlog.changePWD', [
 })
 .controller('ChangePCtrl',
   function($scope,$location,$firebaseAuth){
-    var firebaseObj = new Firebase("https://torrid-heat-2114.firebaseio.com");
+    var firebaseObj = new Firebase(API_URL);
     var auth = $firebaseAuth(firebaseObj); 
     $scope.changeP=function(){
       if (!$scope.changePForm.$invalid) {

@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="ngBlog" ng-controller="AppCtrl">
+<html ng-app="fireBlog" ng-controller="AppCtrl">
   <head>
     <title ng-bind="pageTitle"></title>
 
     <!-- social media tags -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@joshdmiller">
-    <meta name="twitter:title" content="ngBoilerplate">
-    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
-    <meta name="twitter:creator" content="@joshdmiller">
-    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
-    <meta property="og:title" content="ngBoilerplate" />
+    <meta name="twitter:site" content="@Angel_Wang5">
+    <meta name="twitter:title" content="fireBlog">
+    <meta name="twitter:description" content="An example of a blog build on Firebase and AngularJS.">
+    <meta name="twitter:creator" content="@Angel_Wang5">
+    <meta name="twitter:image:src" content="https://41.media.tumblr.com/4380c58b6dc3cb6513cc9d1f2907125a/tumblr_npxyejOVEz1te26r3o1_540.png">
+    <meta property="og:title" content="fireBlog" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
-    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
-    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta property="og:url" content="****" />
+    <meta property="og:image" content="https://41.media.tumblr.com/4380c58b6dc3cb6513cc9d1f2907125a/tumblr_npxyejOVEz1te26r3o1_540.png" />
+    <meta property="og:description" content="An example of a blog build on Firebase and AngularJS.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--google font-->
-    <link href='http://fonts.googleapis.com/css?family=Parisienne|Marck+Script|Bilbo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Parisienne|Marck+Script|Bilbo|Open+Sans' rel='stylesheet' type='text/css'>
 
     <!-- font awesome from BootstrapCDN -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!--Glyphicons css on Bootstrap CDN-->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -41,63 +39,27 @@
     
   </head>
   <body>
-  <header class="header">
-  <div class="logo">
-      <a class="site-title"href ui-sref="article">My Blog</a><br>
-      <p class="site-description">The World I Pen for Myself</p>
-  </div>
-  <nav>
-    <div class="col-md-3"></div>
-    <div class="midMenu col-md-6">
-      <label for="show-menu" class="show-menu"><i class="fa fa-bars fa-2x"></i></label>
-    <input type="checkbox" id="show-menu" role="button">
-        <ul id="menu">
-            <li><a class="home" href ui-sref="article">Home</a></li>
-            <li><a class="signIn"href ui-sref="login">Sign In</a></li>
-            <li><a class="signUp"href ui-sref="register">Sign Up</a></li>
-            <li><a class="aboutMe"href ui-sref="aboutMe">About Me</a></li>
-            <li><a class="contact"href ui-sref="contact">Contact</a></li>
-            <li> <a class="post"href ui-sref="post">Post</a></li>   
-        </ul>
-     </div>
-     <div class="col-md-3"></div>   
-  </nav>
-   <!--<div class="blog-defination">
-    <a class="titleLink"href ui-sref="article">
-         <div class="site-title">My Blog</div>
-    </a>     
- 
-    <div class="blogDesc-container">
-        <p class="site-description">The World I Pen for Myself</p>
-    </div>
-    </div> -->
-    <!--
-    <nav> 
-     <div class="menu-top">
-       <ul class="nav-top">
-            <li><a class="home" href ui-sref="article">Home</a></li>
-            <span>/</span>
-            <li><a class="signIn"href ui-sref="login">Sign In</a></li>
-            <span>/</span>
-            <li><a class="signUp"href ui-sref="register">Sign Up</a></li>
-            <span>/</span>
-            <li>About Me</li>
-            <span>/</span>
-            <li>Contact</li>
-            <span>/</span>
-            <li> <a class="post"href ui-sref="post">Post</a></li>        
-       </ul>    
-      </div>   
-    </nav>
-    -->
-    <div class="col-md-3">{{welcome}}</div>
- </header>
-    
-    
-     
+    <header class="header">
+      <div class="logo">
+          <a class="site-title"href ui-sref="article">My Blog</a><br>
+          <p class="site-description">The World I Pen for Myself</p>
+      </div>
+      <nav>
+        <label for="show-menu" class="show-menu"><i class="fa fa-bars fa-2x"></i></label>
+        <input type="checkbox" id="show-menu" role="button">
+          <ul id="menu">
+              <li><a class="home" href ui-sref="article">Home</a></li>
+              
+              <li ng-click="SignIn()" ng-hide="currentUserSignedIn"><a class="signIn"href ui-sref="login">Sign In</a></li>
+              <li ng-click="SignIn()" ng-hide="currentUserSignedIn"><a class="signUp"href ui-sref="register">Sign Up</a></li>
+              <li><a class="aboutMe"href ui-sref="aboutMe">About Me</a></li>
+              <li> <a class="post"href ui-sref="post">Post</a></li> 
+              <span class="welcomeUser" ng-show="currentUserSignedIn">{{welcome}}</span>  
+          </ul>     
+      </nav>
+   </header>
+
     <div class="container" ui-view="main"></div>
-   <!-- <div class="footer1">
-    </div> -->
-    
+
   </body>
 </html>

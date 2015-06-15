@@ -1,4 +1,4 @@
-angular.module( 'ngBlog.register', [
+angular.module( 'fireBlog.register', [
   'ui.router',
   'placeholders',
   'ui.bootstrap',
@@ -19,7 +19,7 @@ angular.module( 'ngBlog.register', [
 })
 .controller('RegisterCtrl',
   function($scope,$location,$firebaseAuth,$http){
-    var firebaseObj = new Firebase("https://torrid-heat-2114.firebaseio.com");
+    var firebaseObj = new Firebase(API_URL);
     var auth = $firebaseAuth(firebaseObj);
     $scope.signUp = function() {
     if (!$scope.regForm.$invalid) {
@@ -35,7 +35,7 @@ angular.module( 'ngBlog.register', [
                     var authJSON={
                       username: $scope.email
                     };
-                    $http.put('https://torrid-heat-2114.firebaseio.com/profile/'+$scope.profileID+'/.json',authJSON);
+                    $http.put(API_URL+'/profile/'+$scope.profileID+'/.json',authJSON);
                     // do things if success
                     console.log('User creation success');
                     $location.path('/login');

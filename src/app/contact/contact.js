@@ -1,4 +1,4 @@
-angular.module( 'ngBlog.contact', [
+angular.module( 'fireBlog.contact', [
   'ui.router',
   'plusOne',
   'ui.bootstrap',
